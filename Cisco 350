@@ -1,6 +1,8 @@
 ##Zameco I Core Switch - Cisco 350 Series
 =========================================
 
+Paste VLAN CONFIGURATION
+
 conf t
 int vlan 10
 name FSD
@@ -36,3 +38,15 @@ int vlan 110
 name SWITCHES
 ip address 10.10.110.100 255.255.255.0
 ex
+
+Paste PORT CONFIGURATION
+
+int GigabitEthernet 1/0/1
+switchport mode access
+switchport access vlan 110
+spanning-tree portfast
+description MGMT_PORT
+ex
+int GigabitEthernet 1/0/2
+switchport mode trunk
+switch
