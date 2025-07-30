@@ -1,0 +1,38 @@
+##Zameco I Core Switch - Cisco 350 Series
+=========================================
+
+conf t
+int vlan 10
+name FSD
+ex
+int vlan 20
+name ISD
+ex
+int vlan 30
+name AUDIT
+ex
+int vlan 40
+name WAREHOUSE
+ex
+int vlan 50
+name CorPLAN
+ex
+int vlan 60
+name MPH
+ex
+int vlan 70
+name TSD
+ex
+int vlan 80
+name P2P
+ex
+int vlan 90
+name ZAMECO_OPERATIONS
+ex
+int vlan 100
+name SERVERS
+ex
+int vlan 110
+name SWITCHES
+ip address 10.10.110.100 255.255.255.0
+ex
