@@ -1,7 +1,7 @@
 ##Zameco I Core Switch - Cisco 350 Series
 =========================================
 
-Paste VLAN CONFIGURATION
+##Paste VLAN CONFIGURATION##
 
 conf t
 int vlan 10
@@ -39,7 +39,7 @@ name SWITCHES
 ip address 10.10.110.100 255.255.255.0
 ex
 
-Paste PORT CONFIGURATION
+##Paste PORT CONFIGURATION##
 
 int GigabitEthernet 1/0/1
 switchport mode access
@@ -49,4 +49,60 @@ description MGMT_PORT
 ex
 int GigabitEthernet 1/0/2
 switchport mode trunk
-switch
+switchport trunk allowed vlan 10,90
+description FSD1M
+ex
+int GigabitEthernet 1/0/3
+switchport mode access
+switchport access vlan 10
+spanning-tree portfast
+description FSD2UM
+ex
+int GigabitEthernet 1/0/4
+switchport mode trunk
+switchport trunk allowed vlan 20,90
+description ISD
+ex
+int GigabitEthernet 1/0/5
+switchport	mode trunk
+switchport trunk allowed vlan 30,90
+description AUDIT
+ex
+int GigabitEthernet 1/0/6
+switchport mode trunk
+switchport trunk allowed vlan 60,90
+description MPH
+ex
+int GigabitEthernet 1/0/7
+switchport mode trunk
+switchport trunk allowed vlan 50,80,90,100
+description CorPLAN
+ex
+int GigabitEthernet 1/0/8
+switchport mode trunk
+switchport trunk allowed vlan 40,70,90
+description WH_TSD
+ex
+int range GigabitEthernet 1/0/9-10
+switchport mode access
+switchport access vlan 70
+spanning-tree portfast
+description GuardHouse
+ex
+int  GigabitEthernet 1/0/11
+switchport mode access
+switchport access vlan 100
+spanning-tree portfast
+description SERVERFARM
+ex
+int range GigabitEthernet 1/0/12-14
+switchport mode access
+switchport access vlan 90
+spanning-tree portfast
+description DataCenter_IDF
+ex
+int range GigabitEthernet 1/0/23-24
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110
+description UPLINKS_TO_FIREWALL
+ex
